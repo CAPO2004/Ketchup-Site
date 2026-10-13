@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e50916" />
+    <meta
+      name="description"
+      content="كاتشب — فطير وبرجر وبروست على مزاجك. اختار طلبك وابعته بسهولة على واتساب."
+    />
+    <title>كاتشب | اطلبها على مزاجك</title>
+    <link rel="icon" href="assets/logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="announcement">
+      <span class="announcement-dot"></span> اختيارات كتير… والطلب على مزاجك
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="كاتشب — الصفحة الرئيسية">
+        <img src="assets/logo.jpg" alt="شعار كاتشب" />
+        <span class="brand-copy"><strong>كاتشب</strong><small>اطلبها على مزاجك</small></span>
+      </a>
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a href="#home">الرئيسية</a>
+        <a href="#menu">المنيو</a>
+        <a href="#how">طريقة الطلب</a>
+      </nav>
+      <button class="header-cart" id="openCart" type="button" aria-label="افتح سلة الطلب">
+        <span class="cart-icon" aria-hidden="true">▱</span><span>سلة الطلب</span
+        ><b class="cart-count" id="cartCount">0</b>
+      </button>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="افتح القائمة"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="eyebrow-mark">✦</span> كاتشب • اطلبها على مزاجك</div>
+          <h1>مزاجك له<br /><em>طعم تاني.</em></h1>
+          <p>
+            من أول لقمة فطير سخن، لحد برجر متظبط وبروست مقرمش… اختار اللي نفسك فيه وخلّي الباقي
+            علينا.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-red" href="#menu"
+              >اختار أكلك <span aria-hidden="true">←</span></a
+            >
+            <a class="text-link" href="#how">إزاي أطلب؟ <span aria-hidden="true">↙</span></a>
+          </div>
+          <div class="hero-notes">
+            <span><i>✓</i> اختيارات متنوعة</span><span><i>✓</i> طلب بسيط على واتساب</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-later">
+          <div class="hero-halo"></div>
+          <img
+            class="hero-food"
+            src="assets/hero-burger.jpeg"
+            alt="برجر كاتشب مع البطاطس وصوص الكاتشب"
+          />
+          <div class="hero-sticker">
+            <span>اختار<br />اللي بتحبه</span><b>♥</b>
+          </div>
+          <div class="hero-caption">
+            <span class="caption-line"></span><span>طعم يظبط يومك</span>
+          </div>
+        </div>
+        <div class="hero-side-label">طازة • لذيذة • على مزاجك</div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">المنيو</span>
+            <h2>اختار <em>وجبتك</em></h2>
+          </div>
+          <p>منيو متنوع، اختيارات على مزاجك، وطلبك كله في مكان واحد.</p>
+        </div>
+        <div class="menu-tools reveal">
+          <div
+            class="category-tabs"
+            id="categoryTabs"
+            role="tablist"
+            aria-label="أقسام المنيو"
+          ></div>
+          <label class="search-box"
+            ><span aria-hidden="true">⌕</span
+            ><input
+              id="menuSearch"
+              type="search"
+              placeholder="بتدور على إيه؟"
+              aria-label="ابحث في المنيو"
+            /><kbd>بحث</kbd></label
+          >
+        </div>
+        <div class="menu-meta">
+          <span id="menuHeading">كل الاختيارات</span><span id="resultsCount"></span>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span>⌕</span><strong>ملقيناش الصنف ده</strong>
+          <p>جرّب كلمة تانية أو اختار قسم مختلف.</p>
+        </div>
+        <div class="menu-note">
+          <span class="note-star">✦</span
+          ><span
+            >السعر والتفاصيل بتظهر مع كل اختيار. الإجمالي للأصناف فقط، وأي رسوم توصيل يحددها المطعم.
+            راجع طلبك قبل ما تبعته.</span
+          >
+        </div>
+      </section>
+
+      <section class="order-band" id="how">
+        <div class="band-top reveal">
+          <span class="section-kicker light-kicker">سهّلناها عليك</span>
+          <h2>طلبك على <em>٣ خطوات</em></h2>
+          <p>اختار أكلك، راجع التفاصيل، وابعت طلبك على واتساب.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card reveal">
+            <b class="step-number">01</b><span class="step-icon">⌕</span>
+            <h3>اختار اللي نفسك فيه</h3>
+            <p>تصفّح الأقسام وحدد الحجم أو الاختيار المناسب.</p>
+          </article>
+          <article class="step-card reveal reveal-later">
+            <b class="step-number">02</b><span class="step-icon">▱</span>
+            <h3>ظبّط سلتك</h3>
+            <p>زوّد الكمية أو احذف صنف وشوف إجمالي طلبك.</p>
+          </article>
+          <article class="step-card reveal reveal-latest">
+            <b class="step-number">03</b><span class="step-icon">↗</span>
+            <h3>ابعته على واتساب</h3>
+            <p>اكتب بياناتك، راجع الملخص، وبعدها أرسله للمطعم.</p>
+          </article>
+        </div>
+        <div class="band-squiggle" aria-hidden="true">〰</div>
+      </section>
+
+      <section class="menu-images-section">
+        <div class="menu-images-copy">
+          <span class="section-kicker">منيو كاتشب</span>
+          <h2>شايف حاجة<br /><em>عجبتك؟</em></h2>
+          <p>الأسعار والاختيارات موجودة كمان في صور المنيو الأصلية.</p>
+        </div>
+        <div class="menu-image-links">
+          <a href="assets/menu-pies.jpg" target="_blank" rel="noreferrer"
+            ><img
+              src="assets/menu-pies.jpg"
+              alt="المنيو الأصلي: الفطير الحلو والحادق"
+              loading="lazy"
+            /><span>الفطير</span><b>↗</b></a
+          >
+          <a href="assets/menu-burgers.jpg" target="_blank" rel="noreferrer"
+            ><img
+              src="assets/menu-burgers.jpg"
+              alt="المنيو الأصلي: البرجر والفراخ"
+              loading="lazy"
+            /><span>برجر وفراخ</span><b>↗</b></a
+          >
+          <a href="assets/menu-chicken.jpg" target="_blank" rel="noreferrer"
+            ><img
+              src="assets/menu-chicken.jpg"
+              alt="المنيو الأصلي: وجبات البروست والبوكسات"
+              loading="lazy"
+            /><span>بروست وبوكسات</span><b>↗</b></a
+          >
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="cta-plate" aria-hidden="true"><span>كاتشب</span><b>♥</b></div>
+        <div>
+          <span class="section-kicker light-kicker">مستعد تختار؟</span>
+          <h2>اللقمة الحلوة<br />مستنياك.</h2>
+        </div>
+        <a class="button button-white" href="#menu"
+          >يلا على المنيو <span aria-hidden="true">←</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#home"
+        ><img src="assets/logo.jpg" alt="" /><span
+          ><strong>كاتشب</strong><small>اطلبها على مزاجك</small></span
+        ></a
+      >
+      <p>اختار أكلك، واحنا معاك خطوة بخطوة لحد ما طلبك يوصل للمطعم.</p>
+      <a class="footer-whatsapp" href="https://wa.me/201090204281" target="_blank" rel="noreferrer"
+        ><span>◉</span> تواصل على واتساب</a
+      >
+      <small class="copyright">© كاتشب — كل الحقوق محفوظة</small>
+    </footer>
+
+    <div class="drawer-scrim" id="drawerScrim"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="سلة الطلب" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <span class="section-kicker">طلبك</span>
+          <h2>سلة <em>كاتشب</em></h2>
+        </div>
+        <button class="icon-button" id="closeCart" type="button" aria-label="إغلاق السلة">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">
+        <span>▱</span><strong>السلة لسه فاضية</strong>
+        <p>اختار حاجة بتحبها من المنيو.</p>
+        <button type="button" class="button button-red" id="browseMenu">روح للمنيو</button>
+      </div>
+      <div class="drawer-footer" id="drawerFooter" hidden>
+        <div class="subtotal"><span>إجمالي الأصناف</span><strong id="cartTotal">0 ج.م</strong></div>
+        <button class="button button-red checkout-start" id="checkoutStart" type="button">
+          كمّل بيانات الطلب <span>←</span></button
+        ><small>الطلب هيفتح لك واتساب للمراجعة والإرسال.</small>
+      </div>
+    </aside>
+
+    <dialog class="checkout-dialog" id="checkoutDialog" aria-labelledby="checkoutTitle">
+      <div class="checkout-header">
+        <div>
+          <span class="section-kicker">آخر خطوة</span>
+          <h2 id="checkoutTitle">بيانات <em>الطلب</em></h2>
+        </div>
+        <button class="icon-button" id="closeCheckout" type="button" aria-label="إغلاق">×</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <p class="form-intro">اكتب بيانات التواصل والعنوان عشان تظهر في رسالة طلبك.</p>
+        <label
+          >الاسم <span>*</span
+          ><input name="name" autocomplete="name" required maxlength="80" placeholder="اسمك"
+        /></label>
+        <label
+          >رقم الموبايل <span>*</span
+          ><input
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            required
+            maxlength="20"
+            placeholder="01xxxxxxxxx"
+        /></label>
+        <label
+          >العنوان <span>*</span
+          ><textarea
+            name="address"
+            autocomplete="street-address"
+            required
+            rows="2"
+            maxlength="180"
+            placeholder="المنطقة، الشارع، وأقرب علامة مميزة"
+          ></textarea>
+        </label>
+        <label
+          >ملاحظات على الطلب <small>اختياري</small
+          ><textarea
+            name="notes"
+            rows="2"
+            maxlength="240"
+            placeholder="أي تفاصيل تحب توضحها"
+          ></textarea>
+        </label>
+        <button class="button button-red full-button" type="submit">
+          راجع طلبك <span>←</span>
+        </button>
+      </form>
+      <section class="checkout-review" id="checkoutReview" hidden>
+        <p class="form-intro">راجع البيانات والأصناف قبل فتح واتساب.</p>
+        <div class="review-customer" id="reviewCustomer"></div>
+        <div class="review-lines" id="reviewLines"></div>
+        <div class="review-total">
+          <span>إجمالي الأصناف</span><strong id="reviewTotal"></strong>
+        </div>
+        <button class="button button-red full-button" id="sendWhatsapp" type="button">
+          افتح واتساب وأرسل الطلب <span>↗</span>
+        </button>
+        <button class="review-back" id="reviewBack" type="button">رجوع لتعديل البيانات</button>
+        <small class="whatsapp-hint"
+          >هتفتح محادثة واتساب برسالة جاهزة؛ اضغط «إرسال» داخل واتساب لإتمام الطلب.</small
+        >
+      </section>
+    </dialog>
+
+    <a class="mobile-cart" id="mobileCart" href="#cartDrawer" aria-label="عرض سلة الطلب" hidden
+      ><span>سلتك <b id="mobileCount">0</b></span
+      ><strong id="mobileTotal">0 ج.م</strong><i>←</i></a
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
